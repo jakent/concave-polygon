@@ -10,12 +10,12 @@ class SolutionTest extends FlatSpec with Matchers {
   "Concave Polygon" should "work" in {
     val myOut = new ByteArrayOutputStream
     Console.withOut(new PrintStream(myOut)) {
-      System.setIn(new ByteArrayInputStream(readFileToString("/wrong-order/test").getBytes()))
+      System.setIn(new ByteArrayInputStream(readFileToString("/tricky/test").getBytes()))
 
       Solution.main(Array.empty)
     }
 
-    myOut.toString shouldEqual readFileToString("/wrong-order/expected")
+    myOut.toString shouldEqual readFileToString("/tricky/expected")
   }
 
 }

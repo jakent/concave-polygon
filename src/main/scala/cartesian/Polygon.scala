@@ -2,7 +2,7 @@ package cartesian
 
 case class Polygon(vertices: Seq[(Point, Point, Point)]) {
   def isConcave: Boolean = {
-    val positiveCrossProducts = vertices.map(p => Polygon.crossProduct(p._1, p._2, p._3) > 0)
+    val positiveCrossProducts = vertices.map(p => Polygon.crossProduct(p._1, p._2, p._3) >= 0)
     !positiveCrossProducts.forall(_ == positiveCrossProducts.head)
   }
 }

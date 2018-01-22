@@ -15,4 +15,20 @@ class OrdererTest extends FlatSpec with Matchers {
     )
   }
 
+  it should "order a set of points counterclockwise with two of the points having the same polar angle" in {
+    Orderer.counterclockwise(Seq(
+      Point(0, 0),
+      Point(2, 0),
+      Point(0, 2),
+      Point(2, 2),
+      Point(1, 0)
+    )) shouldBe Seq(
+      Point(0, 0),
+      Point(1, 0),
+      Point(2, 0),
+      Point(2, 2),
+      Point(0, 2)
+    )
+  }
+
 }

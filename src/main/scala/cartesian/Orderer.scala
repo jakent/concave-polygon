@@ -16,7 +16,7 @@ object Orderer {
           else if (x >= 0) (p, polarAngle(x, y) + 360)
           else (p, polarAngle(x, y) + 180)
         })
-          .sortBy(_._2)
+          .sortBy(p => (p._2, Point.distance(head, p._1)))
           .map(_._1)
       }
     }
