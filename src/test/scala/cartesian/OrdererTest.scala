@@ -1,4 +1,5 @@
-import cartesian.{Orderer, Point}
+package cartesian
+
 import org.scalatest.{FlatSpec, Matchers}
 
 class OrdererTest extends FlatSpec with Matchers {

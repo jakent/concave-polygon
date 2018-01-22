@@ -1,4 +1,5 @@
-import cartesian.{Point, Polygon}
+package cartesian
+
 import org.scalactic.{Equality, TolerantNumerics}
 import org.scalatest.{FlatSpec, Matchers}
 
