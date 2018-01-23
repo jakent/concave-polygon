@@ -5,6 +5,8 @@ case class Polygon(vertices: Seq[(Point, Point, Point)]) {
     val positiveCrossProducts = vertices.map(p => Polygon.crossProduct(p._1, p._2, p._3) >= 0)
     !positiveCrossProducts.forall(_ == positiveCrossProducts.head)
   }
+
+  def perimeter: Double = vertices.map(t => Point.distance(t._1, t._2)).sum
 }
 
 object Polygon {
